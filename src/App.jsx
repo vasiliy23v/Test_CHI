@@ -14,6 +14,10 @@ function App() {
   }, []);
 
   /*
+The most correct way to implement summation, in my opinion, would be to use the Redux library, 
+however, I have tried raising the state. 
+The last point has not been implemented to the end, but in time I'm sure I will learn how to do it
+
   const takeState = (a) => {
     console.log(a);
   };
