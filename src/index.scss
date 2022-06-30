@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  color: #303247;
+}
+
+.header {
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 36px;
+  padding: 32px 60px;
+  border: 1px solid rgba(48, 50, 71, 0.1);
+  margin-bottom: 32px;
+}
+
+.main {
+  padding: 0 60px;
+
+  &__card-block {
+
+
+    position: relative;
+    max-width: 676px;
+    height: 70px;
+    padding: 32px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 32px;
+
+    border: 1px solid rgba(48, 50, 71, 0.1);
+    border-radius: 20px;
+
+
+    &__text {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      &__name {
+        font-weight: 600;
+        font-size: 25px;
+        line-height: 30px;
+      }
+
+      &__descr {
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 24px;
+      }
+    }
+
+    &__func {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+
+      &__state {
+        display: none;
+
+        &.active {
+          position: absolute;
+          right: 32px;
+          top: 13px;
+          display: block;
+          text-align: right;
+          color: #51A571;
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 20px;
+        }
+      }
+
+      &__button {
+        border-radius: 5px;
+        background: #F7E308;
+        padding: 16px 32px;
+        font-size: 20px;
+        line-height: 24px;
+        text-transform: uppercase;
+        cursor: pointer;
+
+        &:hover {
+          background: #ffee30;
+        }
+
+        &:active {
+          background: #cebd00;
+        }
+      }
+    }
+
+    &:last-of-type {
+      margin-bottom: 60px;
+    }
+
+  }
+
+
+}
+
+.total-amount {
+  max-width: 750px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+
+}
+
+.modal {
+  height: 100vh;
+  width: 100vw;
+  background: rgba(26, 26, 26, 0.8);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0);
+  z-index: 1;
+
+  &-content {
+    position: relative;
+    width: 499px;
+    height: 371px;
+    background: #fff;
+    padding: 64px;
+    border-radius: 5px;
+
+    &__name {
+      font-weight: 600;
+      font-size: 35px;
+      line-height: 42px;
+      margin-bottom: 32px;
+    }
+
+    &__descr {
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 24px;
+
+      &__title {
+        margin-bottom: 32px;
+      }
+
+      &__ends {
+        margin-bottom: 64px;
+      }
+    }
+
+    &__invest {
+      &__amount {
+        font-weight: 600;
+        font-size: 30px;
+        line-height: 36px;
+        margin-bottom: 30px;
+      }
+
+      &__form {
+        display: flex;
+        justify-content: space-between;
+
+        &-block>input {
+          text-align: right;
+          width: 298px;
+          height: 56px;
+          background: #FFFFFF;
+          border: 1px solid rgba(48, 50, 71, 0.1);
+          border-radius: 5px;
+          font-weight: 400;
+          font-size: 20px;
+          line-height: 24px;
+          padding-right: 32px;
+        }
+      }
+
+      &__cross {
+        font-weight: 600;
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        cursor: pointer;
+
+      }
+    }
+  }
+
+  &.active {
+    transform: scale(1);
+  }
+}
