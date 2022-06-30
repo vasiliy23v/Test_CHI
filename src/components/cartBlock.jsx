@@ -6,19 +6,20 @@ const CartBlock = ({
   title,
   id,
   available,
-  annualised_return,
   term_remaining,
   ltv,
   amount,
+  /*takeState,*/
 }) => {
   const [invested, setInvested] = useState(false);
   const [modalActive, setModalActive] = useState(false);
-
   let [loanAvailable, setLoanAvailable] = useState(
     Number(available.replace(",", ""))
   );
+
   const loanAvailableDeduct = (sum) => {
     setLoanAvailable((loanAvailable -= sum));
+    /*takeState(loanAvailable);*/
   };
   const handleInvested = () => {
     setInvested(true);
@@ -56,7 +57,6 @@ const CartBlock = ({
         handleInvested={handleInvested}
         title={title}
         available={available}
-        annualised_return={annualised_return}
         term_remaining={term_remaining}
         ltv={ltv}
         amount={amount}

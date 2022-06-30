@@ -7,11 +7,7 @@ const Modal = ({
   openModal,
   handleInvested,
   title,
-  available,
-  annualised_return,
   term_remaining,
-  ltv,
-  amount,
   loanAvailable,
   loanAvailableDeduct,
 }) => {
@@ -19,6 +15,8 @@ const Modal = ({
     handleInvested(true);
     loanAvailableDeduct(a);
   };
+
+  let deductConst = 0;
   return (
     <div
       className={active ? "modal active" : "modal"}
@@ -44,9 +42,10 @@ const Modal = ({
                 type="text"
                 id="fname"
                 placeholder="Input amount of money"
+                onChange={(e) => (deductConst = e.target.value)}
               />
             </form>
-            <span onClick={() => allFunc(100)}>
+            <span onClick={() => allFunc(deductConst)}>
               <Button openModal={openModal} />
             </span>
           </div>

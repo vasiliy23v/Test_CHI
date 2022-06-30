@@ -13,6 +13,16 @@ function App() {
       .then((json) => setLoans(json.loans));
   }, []);
 
+  /*
+  const takeState = (a) => {
+    console.log(a);
+  };
+  const sum = 0;
+  const sumFunc = () => {
+    loans.forEach((obj) => (sum += Number(obj.available.replace(",", ""))));
+  };
+  
+  */
   return (
     <div>
       <Header />
@@ -22,14 +32,13 @@ function App() {
             key={obj.id}
             title={obj.title}
             available={obj.available}
-            annualised_return={obj.annualised_return}
             term_remaining={obj.term_remaining}
-            ltv={obj.ltv}
             amount={obj.amount}
+            /*takeState={takeState}*/
           />
         ))}
 
-        <TotalAmount />
+        <TotalAmount /*sumFunc={sumFunc}*/ />
       </main>
     </div>
   );
